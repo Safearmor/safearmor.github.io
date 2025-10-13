@@ -221,7 +221,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 8rem 4rem;
-  background: url('/images/safe-hero.png') no-repeat center center;
+  background: url('/images/safe-hero.webp') no-repeat center center;
   background-size: cover;
   position: relative; /* importante para o ::before */
 }
@@ -424,7 +424,7 @@ body {
   flex-wrap: wrap;
   text-align: justify;
   padding: 6rem 2rem;
-  background-image: url(/images/safe-hero0.png);
+  background-image: url(/images/safe-hero0.webp);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -634,7 +634,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 6rem 2rem;
-  background-image: url(/images/safe-hero2.png);
+  background-image: url(/images/safe-hero2.webp);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
