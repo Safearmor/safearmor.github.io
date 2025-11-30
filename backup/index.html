@@ -27,47 +27,12 @@
 
     gtag('config', 'AW-799828645');
   </script>
+  <script src="/js/include.js" defer></script>
 </head>
 <body>
 
-  <!---------------------- NAVBAR FIXA ------------------------>
-  <header class="navbar">
-    <div class="container">
-      <!-- LOGO -->
-      <a href="/" class="logo">
-        <img src="/images/logo.webp" alt="SafeArmor">
-      </a>
-
-      <!-- MENU TOGGLE (checkbox hack) -->
-      <input type="checkbox" id="menu-toggle">
-      <label for="menu-toggle" class="menu-icon">☰</label>
-
-      <!-- LINKS -->
-      <nav class="nav-links">
-        <a href="/">Home</a>
-
-        <div class="dropdown">
-          <input type="checkbox" id="drop-toggle">
-          <label for="drop-toggle" class="dropbtn">Soluções ▾</label>
-          <div class="dropdown-content">
-            <a href="/backup">Backup Gerenciado</a>
-            <a href="/fileserver">Servidor de Arquivos</a>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <input type="checkbox" id="drop-toggle">
-          <label for="drop-toggle" class="dropbtn">Suporte ▾</label>
-          <div class="dropdown-content">
-            <a href="https://suporte.safearmor.com.br/help/43155784">Abrir Chamado</a>
-          </div>
-        </div>
-        
-        <a href="/contato">Contato</a>
-      </nav>
-    </div>
-  </header>
-
+<!-- NAV -->
+<div data-include="/partials/nav.html"></div>
 
 <section class="content">
   <section class="hero" style="background-image: url('/images/safe-hero3.webp');">
@@ -259,52 +224,8 @@
 
 </section>
 
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-images">
-        <img src="/images/footer/lgpd.png" alt="LGPD">
-        <img src="/images/footer/gdpr.png" alt="GDPR">
-        <a href="/iso27001.html"><img src="/images/footer/ISO-27001-safearmor.png" alt="ISO 27001"></a>
-      </div>
-      
-      <p>
-        © 2025 SafeArmor. Todos os direitos reservados.<br>
-        <br>
-        <br/>
-        <span class="footer-info">
-          <i class="fa fa-clock-o"></i>
-          Segunda a sexta, 08h–19h | Sábado, 08h–12h
-        </span><br>
-
-        <span class="footer-info">
-          <i class="fa fa-envelope"></i>
-          <a href="mailto:contato@safearmor.com.br">contato@safearmor.com.br</a>
-      </span>
-      <br/>
-      <span class="footer-info">
-        <i class="fa fa-phone"></i>
-        <a href="tel:+5547999236956">(47) 99923-6956</a>
-      </span>
-      <br>
-      </br>
-      
-        <a href="/politica-de-privacidade" target="_blank" rel="noopener">Política de Privacidade</a><br>
-        <a href="/software-livre" target="_blank" rel="noopener">Compromisso com o Software Livre e Open Source</a><br>
-      </p>
-        
-      <div class="footer-social">
-        <a href="https://www.linkedin.com/company/safearmor" target="_blank" aria-label="LinkedIn">
-          <i class="fa fa-linkedin"></i>
-        </a>
-        <a href="https://facebook.com/safearmor" target="_blank" aria-label="Facebook">
-          <i class="fa fa-facebook"></i>
-        </a>
-        <a href="https://github.com/safearmor" target="_blank" aria-label="GitHub">
-          <i class="fa fa-github"></i>
-        </a>
-      </div>
-    </div>
-  </footer>
+<!-- FOOTER -->
+<div data-include="/partials/footer.html"></div>
 
 </body>
 </html>
