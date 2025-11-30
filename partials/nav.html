@@ -1,37 +1,39 @@
   <!---------------------- NAVBAR FIXA ------------------------>
-  <header class="navbar">
-    <div class="container">
-      <!-- LOGO -->
-      <a href="/" class="logo">
-        <img src="/images/logo.webp" alt="SafeArmor">
-      </a>
+<header class="navbar">
+  <div class="container">
+    <!-- LOGO -->
+    <a href="/" class="logo">
+      <img src="/images/logo.webp" alt="SafeArmor">
+    </a>
 
-      <!-- MENU TOGGLE (checkbox hack) -->
-      <input type="checkbox" id="menu-toggle">
-      <label for="menu-toggle" class="menu-icon">☰</label>
+    <!-- MENU TOGGLE (checkbox hack) -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">☰</label>
 
-      <!-- LINKS -->
-      <nav class="nav-links">
-        <a href="/">Home</a>
+    <!-- LINKS -->
+    <nav class="nav-links">
+      <a href="/">Home</a>
 
-        <div class="dropdown">
-          <input type="checkbox" id="drop-toggle">
-          <label for="drop-toggle" class="dropbtn">Soluções ▾</label>
-          <div class="dropdown-content">
-            <a href="/backup">Backup Gerenciado</a>
-            <a href="/fileserver">Servidor de Arquivos</a>
-          </div>
+      <!-- DROPDOWN 1 -->
+      <div class="dropdown">
+        <input type="checkbox" id="drop-solucoes">
+        <label for="drop-solucoes" class="dropbtn">Soluções ▾</label>
+        <div class="dropdown-content">
+          <a href="/backup">Backup Gerenciado</a>
+          <a href="/fileserver">Servidor de Arquivos</a>
         </div>
+      </div>
 
-        <div class="dropdown">
-          <input type="checkbox" id="drop-toggle">
-          <label for="drop-toggle" class="dropbtn">Área do Cliente ▾</label>
-          <div class="dropdown-content">
-            <a href="https://suporte.safearmor.com.br/help/43155784">Abrir Chamado</a>
-          </div>
+      <!-- DROPDOWN 2 -->
+      <div class="dropdown">
+        <input type="checkbox" id="drop-cliente">
+        <label for="drop-cliente" class="dropbtn">Área do Cliente ▾</label>
+        <div class="dropdown-content">
+          <a href="https://suporte.safearmor.com.br/help/43155784">Abrir Chamado</a>
         </div>
+      </div>
 
-        <a href="/contato">Contato</a>
-      </nav>
-    </div>
-  </header>
+      <a href="/contato">Contato</a>
+    </nav>
+  </div>
+</header>

@@ -59,7 +59,7 @@ body {
 }
 
 .logo img {
-  height: 50px;
+  height: 45px;
   margin-right: 10px;
 }
 
@@ -105,7 +105,7 @@ body {
 
 .dropdown-content a {
   display: block;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   text-decoration: none;
   color: #0077ff;
   font-size: 1.1rem; /* maior */
@@ -113,6 +113,7 @@ body {
 }
 
 .dropdown-content a:hover {
+  text-decoration: underline;
   background-color: #f9f9f9;
   color: #0077ff;
 }
@@ -133,7 +134,7 @@ body {
 }
 
 #menu-toggle,
-#drop-toggle {
+.dropdown input[type="checkbox"] {
   display: none;
 }
 
@@ -168,13 +169,29 @@ body {
   }
 
   .dropdown-content {
-    display: none;
-    flex-direction: column;
-    background: #f9f9f9;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 0;
+    box-shadow: none;
+    border-radius: 0;
   }
 
-  #drop-toggle:checked + .dropbtn + .dropdown-content {
-    display: flex;
+  .dropdown-content a {
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+    color: #0077ff;
+  }
+
+  /* Impede hover acidental no mobile */
+  .dropdown:hover .dropdown-content {
+    display: none !important;
+  }
+
+  /* Exibe o dropdown somente pelo checkbox */
+  .dropdown input[type="checkbox"]:checked + .dropbtn + .dropdown-content {
+    display: flex !important;
   }
 }
 
