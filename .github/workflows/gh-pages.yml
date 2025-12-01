@@ -3,48 +3,35 @@ name: Deploy MkDocs Docs
 on:
   push:
     branches:
-      - main
+      - main  # só roda quando a main recebe commits
 
 jobs:
   deploy-docs:
     runs-on: ubuntu-latest
 
     steps:
-      # Passo 1: Fazer checkout do repositório
+      # Checkout do repositório
       - uses: actions/checkout@v3
 
-      # Passo 2: Configurar Python
+      # Configurar Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.x
 
-      # Passo 3: Instalar MkDocs e tema Material
+      # Instalar MkDocs e Material
       - name: Install MkDocs
         run: pip install --upgrade pip mkdocs mkdocs-material
 
-      # Passo 4: Build do site, removendo apenas arquivos antigos dentro de docs
+      # Build do site
       - name: Build MkDocs site
         run: mkdocs build --clean
 
-      # Passo 5: Deploy para /docs sem remover outros arquivos do repositório
-      - name: Deploy to /docs
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-        run: |
-          # Garante que a pasta docs existe
-          mkdir -p docs
-          
-          # Copia os arquivos gerados para docs, substituindo apenas o que mudou
-          rsync -a --delete site/ docs/
-          
-          # Configura usuário Git
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          
-          # Commit apenas se houver alterações
-          git add docs
-          git diff --cached --quiet || git commit -m "Update MkDocs docs"
-          
-          # Push usando PAT
-          git push https://x-access-token:${GH_PAT}@github.com/Safearmor/safearmor.github.io.git main
+      # Deploy para gh-pages
+      - name: Deploy MkDocs to gh-pages
+        uses: peaceiris/actions-gh-pages@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # não precisa de PAT
+          publish_dir: ./site
+          publish_branch: gh-pages
+          keep_files: false
