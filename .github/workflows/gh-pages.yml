@@ -10,15 +10,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Pega o código
       - uses: actions/checkout@v3
 
+      # 2. Configura Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.x
 
+      # 3. Instala MkDocs
       - name: Install MkDocs
         run: pip install mkdocs mkdocs-material
 
+      # 4. Build do MkDocs usando docs-md como origem e docs como saída
       - name: Build MkDocs site
-        run: mkdocs build --site-dir docs
+        run: mkdocs build --docs-dir docs-md --site-dir docs --clean
+
+      # 5. Publica no GitHub Pages (main branch / docs)
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: main
+          force_orphan: true
