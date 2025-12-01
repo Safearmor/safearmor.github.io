@@ -3,35 +3,37 @@ name: Deploy MkDocs Docs
 on:
   push:
     branches:
-      - main  # só roda quando a main recebe commits
-
+      - main
+      
 jobs:
   deploy-docs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout do repositório
       - uses: actions/checkout@v3
 
-      # Configurar Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.x
 
-      # Instalar MkDocs e Material
       - name: Install MkDocs
-        run: pip install --upgrade pip mkdocs mkdocs-material
+        run: pip install mkdocs mkdocs-material
 
-      # Build do site
       - name: Build MkDocs site
-        run: mkdocs build --clean
+        run: mkdocs build
 
-      # Deploy para gh-pages
-      - name: Deploy MkDocs to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # não precisa de PAT
-          publish_dir: ./site
-          publish_branch: gh-pages
-          keep_files: false
+      - name: Copy to docs folder
+        run: |
+          rm -rf docs || true
+          mv site docs
+
+      - name: Commit docs folder
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add docs
+          git commit -m "Update MkDocs docs" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
