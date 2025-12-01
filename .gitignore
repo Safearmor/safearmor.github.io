@@ -1,0 +1,23 @@
+# Pasta do site gerado (se você não quiser versionar)
+site/
+site-packages/
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+
+# Arquivos de build do MkDocs que podem ser regenerados
+docs/assets/
+docs/*.html
+docs/*.js
+docs/*.css
+docs/*.map
+docs/404.html
+docs/search_index.json
+docs/sitemap.xml
+
+# Arquivos temporários
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
