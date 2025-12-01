@@ -1,5 +1,0 @@
-site_name: Base de Conhecimento Safearmor
-site_url: https://safearmor.com.br/docs
-theme:
-  name: material
-use_directory_urls: true
