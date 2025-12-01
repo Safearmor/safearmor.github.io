@@ -29,7 +29,7 @@ jobs:
 
       # Deploy para gh-pages
       - name: Deploy MkDocs to gh-pages
-        uses: peaceiris/actions-gh-pages@v6
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}  # não precisa de PAT
           publish_dir: ./site
