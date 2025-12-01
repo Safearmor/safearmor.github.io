@@ -1,0 +1,4 @@
+site_name: SafeArmor Documentação
+site_url: https://safearmor.com.br/docs
+theme:
+  name: material

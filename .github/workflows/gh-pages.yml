@@ -1,0 +1,39 @@
+name: Deploy MkDocs Docs
+
+on:
+  push:
+    branches:
+      - main  # ou a branch que mantém seu site
+
+jobs:
+  deploy-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: Install MkDocs
+        run: pip install mkdocs mkdocs-material
+
+      - name: Build MkDocs site
+        run: mkdocs build
+
+      - name: Copy to docs folder
+        run: |
+          rm -rf docs || true
+          mv site docs
+
+      - name: Commit docs folder
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add docs
+          git commit -m "Update MkDocs docs" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
