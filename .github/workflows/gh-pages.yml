@@ -3,7 +3,7 @@ name: Deploy MkDocs Docs
 on:
   push:
     branches:
-      - main  # ou a branch que mantém seu site
+      - main
 
 jobs:
   deploy-docs:
@@ -21,15 +21,16 @@ jobs:
         run: pip install mkdocs mkdocs-material
 
       - name: Build MkDocs site
-        run: mkdocs build
+        run: mkdocs build --clean
 
-      - name: Copy to docs folder
+      - name: Deploy to /docs
         run: |
-          rm -rf docs || true
+          # Remove a pasta docs antiga
+          rm -rf docs
+          # Move site gerado para docs
           mv site docs
-
-      - name: Commit docs folder
-        run: |
+          # Ajusta o base_url no mkdocs.yml para /docs se necessário
+          # Commit e push
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add docs

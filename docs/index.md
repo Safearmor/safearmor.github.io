@@ -1,17 +1,29 @@
-# Welcome to MkDocs
+# Inicio
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Bem-vindo à **Base de Conhecimento da SafeArmor**! Aqui você encontrará tutoriais, guias e informações essenciais para gerenciar seus Cloud Servers, backups, SSH e muito mais.  
 
-## Commands
+Nosso objetivo é ajudá-lo a configurar, proteger e otimizar sua infraestrutura de forma simples e prática.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+---
 
-## Project layout
+## 🔹 SafeInbox
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## 🔹 SafeBox
+
+## 🔹 SafeVault
+
+## 🔹 Cloud Server
+
+- [Configuração SSH](sshd.md) – Aprenda a gerar e adicionar chaves SSH para acesso seguro.
+
+---
+
+## 🔹 Fique por dentro
+
+- Todos os artigos são atualizados regularmente para refletir as melhores práticas.  
+- Tem sugestões ou encontrou alguma dúvida? Contribua com a Base de Conhecimento da SafeArmor aqui: [Colabore no GitHub](https://github.com/Safearmor/safearmor.github.io/tree/main/docs).
+
+
+---
+
+> 💡 Dica: Use o menu lateral para navegar rapidamente entre os guias, tutoriais e FAQs.
