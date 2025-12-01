@@ -1,0 +1,35 @@
+name: Build MkDocs Site
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: Install MkDocs
+        run: pip install mkdocs mkdocs-material
+
+      - name: Build MkDocs
+        run: mkdocs build --site-dir documentacao
+
+      # Opcional: commit do build dentro do mesmo repositório docs
+      - name: Commit documentacao build
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add documentacao
+          git commit -m "Update built site" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

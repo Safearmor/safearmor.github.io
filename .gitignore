@@ -1,6 +1,7 @@
 # Pasta do site gerado (se você não quiser versionar)
 site/
 site-packages/
+documentacao/
 
 # Cache do Python
 __pycache__/
