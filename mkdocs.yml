@@ -1,5 +1,5 @@
 site_name: Base de Conhecimento Safearmor
-site_url: https://docs.safearmor.com.br/
+site_url: https://safearmor.com.br/documentacao
 docs_dir: docs-md
 theme:
   name: material
